@@ -1,28 +1,36 @@
-import Right from './components/Rightbar'
-import Sidebar from './components/Sidebar'
-import Feed from './components/Feed'
+import Rightbar from './Components/Rightbar';
+import Sidebar from './Components/Sidebar'
+import Feed from './Components/Feed'
 import './App.css'
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import { createTheme, styled } from '@mui/material/styles';
 import { Box, Stack, Typography } from '@mui/material';
-import Navbar from './components/Navbar';
-
+import Navbar from './Components/Navbar';
+import Addbtn from './Components/Addbtn';
+import { ThemeProvider } from '@emotion/react';
 function App() {
  
+  const [mode, setMode]=React.useState("light")
+  const darkTheme=createTheme({
+    palette:{
+      mode: mode
+    },
+  })
 
   return (
-    <>
-   <Box>
+    <ThemeProvider theme={darkTheme}>
+   <Box bgcolor={"background.default"} color={"text.primary"}>
    <Navbar/>
-    <Stack direction={'row'} spacing={2}sx={{justifyContent:"space-between", alignItems:"center"}}>
+    <Stack direction={'row'} spacing={2}sx={{justifyContent:"space-between", alignItems:"flex-start"}}>
     
-      <Sidebar />
+      <Sidebar setMode={setMode} mode={mode} />
       <Feed/>
-      <Right/>
+      <Rightbar/>
     </Stack>
+    <Addbtn/>
    </Box>
 
-    </>
+   </ThemeProvider>
   )
 }
 

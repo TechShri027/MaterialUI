@@ -15,8 +15,8 @@ color:"white"
    
 
 const Search=styled("div")(({theme})=>({
-backgroundColor:"white",
-color:'gray',
+  bgcolor:"background.default",
+  color: "white",
 padding:"0px 10px",
 width:"30%",
 borderRadius:theme.shape.borderRadius
@@ -64,12 +64,12 @@ const Navbar = () => {
         <Notifications/>
         </Badge>
 
-    <Avatar sx={{width:"20px", height:"20px"}}alt="Remy Sharp" src="/static/images/avatar/1.jpg" 
+    <Avatar sx={{width:"20px", height:"20px"}}alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" 
      onClick={e=>setOpen(true)}
     />
     </Icons>
     <UserBox onClick={e=>setOpen(true)}>
-    <Avatar sx={{width:"20px", height:"20px"}}alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+    <Avatar sx={{width:"20px", height:"20px"}}alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
     <Typography variant='span'>John</Typography>
     </UserBox>
     
